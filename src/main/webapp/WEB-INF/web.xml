@@ -20,6 +20,15 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>food</servlet-name>
+        <servlet-class>com.order.FoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>food</servlet-name>
+        <url-pattern>/food</url-pattern>
+    </servlet-mapping>
+    
     <filter>
         <filter-name>pageEncoding</filter-name>
         <filter-class>com.order.PageEncodingFilter</filter-class>
