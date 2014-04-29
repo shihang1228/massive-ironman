@@ -1,4 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.ArrayList,com.order.FoodVo"%>
+<% ArrayList<FoodVo> foodList = (ArrayList<FoodVo>)(request.getAttribute("foodList"));%>
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
@@ -34,23 +36,28 @@
     <div class="container" width="640" height="960">
 
         <h2 align="center"><b>网上订餐管理系统</b></h2>
-        <table class="table" contenteditable="true">
-        <tbody>
-            <tr>
-                <td class="success" rowspan="3">
-                    <img alt="" src="abc" style="border-width: 1px; border-style: solid; width: 150px; height: 150px;" />
+        <table class="table" contenteditable="false">
+        
+        <%for(int i = 0;i<foodList.size();i++)
+        {
+            FoodVo food = foodList.get(i);%>        
+            <tr class="success">
+                <td rowspan="3" align="right">
+                    <img alt="五香牛肉" src="images/<%=food.getFoodPicture()%>" width: 150px; height: 150px;/>
                 </td>
-                <td><strong>菜品名字：</strong></td>
-                <td>鱼香肉丝</td>
+                <td align="left"><strong>菜品名字：</strong></td>
+                <td><%=food.getFoodName()%></td>
             </tr>
             <tr class="info">
-                <td><strong>菜品价格：</strong></td>
-                <td>15元</td>
+                <td align="left"><strong>菜品价格：</strong></td>
+                <td><%=food.getFoodPrice()%></td>
             </tr>
             <tr class="warning">
-                <td><strong>菜品描述：</strong></td>
-                <td>八大菜系之一</td>
-            </tbody>
+                <td align="left"><strong>菜品描述：</strong></td>
+                <td><%=food.getFoodDescription()%></td>
+            </tr>
+            <%}%>
+            
         </table>
     </div> <!-- /container -->
 
