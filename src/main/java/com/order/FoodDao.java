@@ -61,6 +61,7 @@ public class FoodDao
             while(rs.next())
             {
                 food = new FoodVo();
+                food.setFoodId(rs.getLong("food_id"));
                 food.setFoodName(rs.getString("food_name"));
                 food.setFoodPrice(rs.getString("food_price"));
                 food.setFoodDescription(rs.getString("food_description"));
@@ -82,6 +83,40 @@ public class FoodDao
         }
         return foodList;
         
+    }
+    public FoodVo getFoodById(Long pid)
+    {
+        DbManage dbManage = null;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        FoodVo food = null;
+        try
+        {
+            dbManage = dbManage.newInstance();
+            String sql = "SELECT * FROM food_list WHERE food_id=?";
+            pstmt = dbManage.conn.prepareStatement(sql);
+            pstmt.setLong(1,pid);
+            rs = pstmt.executeQuery();
+            rs.next();
+            food = new FoodVo();
+            food.setFoodName(rs.getString("food_name"));
+            food.setFoodPicture(rs.getString("food_picture"));
+            food.setFoodPrice(rs.getString("food_price"));
+            
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            System.out.println("error");
+        }
+        finally
+        {
+            dbManage.close();
+        }
+        return food;
     }
     
     
