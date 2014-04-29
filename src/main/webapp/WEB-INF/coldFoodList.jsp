@@ -43,10 +43,10 @@
             FoodVo food = foodList.get(i);%>        
             <tr class="success">
                 <td rowspan="3" align="right">
-                    <img alt="五香牛肉" src="images/<%=food.getFoodPicture()%>" width: 150px; height: 150px;/>
+                    <img src="images/<%=food.getFoodPicture()%>" width: 150px; height: 150px;/>
                 </td>
                 <td align="left"><strong>菜品名字：</strong></td>
-                <td><%=food.getFoodName()%></td>
+                <td><a href="?action=foodDetails&foodId=<%=food.getFoodId()%>"><%=food.getFoodName()%></a></td>
             </tr>
             <tr class="info">
                 <td align="left"><strong>菜品价格：</strong></td>
