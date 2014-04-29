@@ -28,6 +28,15 @@ public class LoginServlet extends HttpServlet
             req.setAttribute("foodList",foodList);           
             forward("coldFoodList",req,resp);
         }
+        else if("foodDetails".equals(action))
+        {
+            Long pid = Long.valueOf(req.getParameter("foodId"));
+            FoodDao foodDao = new FoodDao();
+            FoodVo food = foodDao.getFoodById(pid);
+            req.setAttribute("food",food);
+            forward("foodDetails",req,resp);
+            
+        }
         else
         {
             forward("login",req,resp);
