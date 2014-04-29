@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class LoginServlet extends HttpServlet
@@ -18,6 +19,14 @@ public class LoginServlet extends HttpServlet
         if("foodList".equals(action))
         {
             forward("index",req,resp);
+        }
+        else if("coldFoodList".equals(action))
+        {
+            FoodDao foodDao = new FoodDao();
+            
+            ArrayList<FoodVo> foodList = foodDao.coldFoodList();
+            req.setAttribute("foodList",foodList);           
+            forward("coldFoodList",req,resp);
         }
         else
         {
