@@ -35,7 +35,7 @@
 
       <form action="" method="POST" class="form-signin" role="form">
         <h2 align="center"><b>网上订餐管理系统</b></h2>
-        <a href="" name="action" class="btn btn-lg btn-primary btn-block">凉菜</a>
+        <a href="?action=coldFoodList" name="action" class="btn btn-lg btn-primary btn-block">凉菜</a>
         <a href="" name="action" class="btn btn-lg btn-primary btn-block">热菜</a>
         <a href="" name="action" class="btn btn-lg btn-primary btn-block">主食</a>
         
