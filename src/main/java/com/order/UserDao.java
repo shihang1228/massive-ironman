@@ -7,6 +7,46 @@ import java.sql.ResultSet;
 
 public class UserDao
 {
+    public boolean login(UserVo user)
+    {
+        DbManage dbManage = null;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        boolean i = false;
+        try
+        {
+            dbManage = dbManage.newInstance();
+            String sql = "SELECT user_name,password FROM member_info WHERE user_name=? and password=?";
+            pstmt = dbManage.conn.prepareStatement(sql);
+            pstmt.setString(1,user.getUserName());
+            pstmt.setString(2,user.getPassword());
+            rs = pstmt.executeQuery();
+            System.out.println(sql);
+            if(rs.next())
+            {
+                i = true;
+            }
+            else
+            {
+                i = false;
+            }
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            System.out.println("error");
+        }
+        finally
+        {
+            dbManage.close();
+        }
+        return i;
+        
+    }
+    
     public void insertUser(UserVo user)
     {
         DbManage dbManage = null;
