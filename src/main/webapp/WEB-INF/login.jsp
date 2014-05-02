@@ -39,7 +39,7 @@
         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <input type="submit" name="action" class="btn btn-lg btn-primary btn-block" value="登录"/>
-        <a href="" name="action" class="btn btn-lg btn-primary btn-block">注册</a>
+        <a href="register" name="action" class="btn btn-lg btn-primary btn-block">注册</a>
         
       </form>
       
