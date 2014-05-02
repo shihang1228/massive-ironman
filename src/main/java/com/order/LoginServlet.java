@@ -52,15 +52,23 @@ public class LoginServlet extends HttpServlet
                 
             String loginUserName = req.getParameter("username");
             String loginPassword = req.getParameter("password");
-
-            if(loginUserName.equals("admin") && loginPassword.equals("abc"))
+            
+            UserVo user = new UserVo();
+            user.setUserName(loginUserName);
+            user.setPassword(loginPassword);
+            
+            UserDao userDao = new UserDao();
+            boolean isLogin = userDao.login(user);
+            System.out.println(isLogin);
+            if(isLogin)
             {
                 HttpSession session = req.getSession();
                 session.setAttribute("memberId",0L);
-                forward("loginSuccess",req,resp);      
+                forward("loginSuccess",req,resp); 
             }
-            else
+            else 
             {
+                
                 forward("loginFailed",req,resp);
             }
              
