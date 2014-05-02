@@ -29,6 +29,15 @@
         <url-pattern>/food</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+    <servlet-name>register</servlet-name>
+    <servlet-class>com.order.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>register</servlet-name>
+    <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
     <filter>
         <filter-name>pageEncoding</filter-name>
         <filter-class>com.order.PageEncodingFilter</filter-class>
