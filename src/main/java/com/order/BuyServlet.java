@@ -46,7 +46,7 @@ public class BuyServlet extends HttpServlet
                 }
                 cart.add(carItem);
                 out.println("下单成功<br>");
-                out.println("<a href=\"?action=coldFoodList\">继续购买</a><br>");
+                out.println("<a href=\"login?action=foodList\">继续购买</a><br>");
                 out.println("<a href=\"" + req.getContextPath() + "/carList\">进入购物车</a><br>");           
             }
             else
