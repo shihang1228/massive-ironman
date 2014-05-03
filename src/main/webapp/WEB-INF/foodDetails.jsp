@@ -36,7 +36,7 @@
     <div class="container" width="640" height="960">
 
         <h2 align="center"><b>网上订餐管理系统</b></h2>
-        <form action="" method="POST">
+        <form action="<%=request.getContextPath()%>/addCart" method="POST">
             <table class="table" contenteditable="false">     
                 <tr class="success" align="center">
                     <td><%=food.getFoodName()%></td>
@@ -49,21 +49,25 @@
                 <tr class="warning" align="center">
                     <td>￥<%=food.getFoodPrice()%> × 
                 
-                    <select name="number">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
+                    <select name="foodNumber">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
                         </select>
                     </td>
                 </tr>
                 <tr class="error">
-                    <td><input type="submit" name="action" class="btn btn-lg btn-primary btn-block" value="下单"/></td>
+                    <td><input type="submit" name="action" class="btn btn-lg btn-primary btn-block" value="下单"/>
+                    <input type="hidden" name="foodName" value="<%=food.getFoodName()%>"/>
+                    <input type="hidden" name="foodPrice"  value="<%=food.getFoodPrice()%>"/>
+                    <input type="hidden" name="foodPicture" value="<%=food.getFoodPicture()%>"/>
+                    </td>
                 </tr>           
             </table>
         </form>
