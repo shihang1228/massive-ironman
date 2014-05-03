@@ -41,7 +41,7 @@
         <%for(CarItem carItem : cart.list())
          {%>        
             <tr class="success">
-                <td rowspan="3" align="right">
+                <td rowspan="4" align="right">
                     <img src="images/<%=carItem.getFoodPicture()%>" width: 150px; height: 150px;/>
                 </td>
                 <td align="left"><strong>菜品名字：</strong></td>
@@ -54,6 +54,10 @@
             <tr class="warning">
                 <td align="left"><strong>订购数量：</strong></td>
                 <td><%=carItem.getFoodNumber()%></td>
+            </tr>
+            <tr class="success">
+            <td><strong>总价：</strong></td>
+            <td><%=(carItem.getFoodPrice().intValue() * carItem.getFoodNumber().intValue())%></td>
             </tr>
           <%}%>
             
