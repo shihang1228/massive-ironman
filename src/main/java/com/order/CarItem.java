@@ -3,7 +3,7 @@ package com.order;
 public class CarItem
 {
     private String foodName;
-    private String foodPrice;
+    private Integer foodPrice;
     private String foodPicture;
     private Integer foodNumber;
     
@@ -16,11 +16,11 @@ public class CarItem
         this.foodName = foodName;
     }
     
-    public String getFoodPrice()
+    public Integer getFoodPrice()
     {
         return foodPrice;
     }
-    public void setFoodPrice(String foodPrice)
+    public void setFoodPrice(Integer foodPrice)
     {
         this.foodPrice = foodPrice;
     }
