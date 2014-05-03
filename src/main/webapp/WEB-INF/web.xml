@@ -38,6 +38,24 @@
     <url-pattern>/register</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+    <servlet-name>addCart</servlet-name>
+    <servlet-class>com.order.BuyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>addCart</servlet-name>
+    <url-pattern>/addCart</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>carList</servlet-name>
+    <servlet-class>com.order.CarListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>carList</servlet-name>
+    <url-pattern>/carList</url-pattern>
+    </servlet-mapping>
+    
     <filter>
         <filter-name>pageEncoding</filter-name>
         <filter-class>com.order.PageEncodingFilter</filter-class>
