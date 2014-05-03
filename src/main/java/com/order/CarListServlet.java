@@ -3,6 +3,7 @@ package com.order;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,13 +25,7 @@ public class CarListServlet extends HttpServlet
         out.println("<b>" + user.getUserName() + "</b>的购物车<br>");
         if(cart != null)
         {
-            for(CarItem carItem : cart.list())
-            {
-                out.println("菜品名：" + carItem.getFoodName()
-                            + "数量：" + carItem.getFoodNumber() 
-                            + "价格：" + carItem.getFoodPrice() 
-                            + "图片：" + carItem.getFoodPicture());
-            }
+            forward("carList",req,resp);
         }
         else
         {
@@ -40,5 +35,11 @@ public class CarListServlet extends HttpServlet
     public void doPost(HttpServletRequest req,HttpServletResponse resp) throws IOException,ServletException
     {
         
+    }
+    
+    public void forward(String page,HttpServletRequest req, HttpServletResponse resp) throws IOException,ServletException
+    {
+        String jsp = "/WEB-INF/" + page + ".jsp";
+        getServletContext().getRequestDispatcher(jsp).forward(req,resp);        
     }
 }
