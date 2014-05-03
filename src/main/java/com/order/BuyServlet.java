@@ -23,8 +23,8 @@ public class BuyServlet extends HttpServlet
         {
             PrintWriter out = resp.getWriter();
             String foodName = req.getParameter("foodName");
-            String foodPrice = req.getParameter("foodPrice");
             String foodPicture = req.getParameter("foodPicture");
+            Integer foodPrice = Integer.parseInt(req.getParameter("foodPrice"));
             Integer foodNumber = Integer.parseInt(req.getParameter("foodNumber"));
         
             HttpSession session = req.getSession();
