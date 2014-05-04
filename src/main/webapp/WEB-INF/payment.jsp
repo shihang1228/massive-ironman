@@ -1,4 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ page import="com.order.UserVo"%>
+<% UserVo userInfo =(UserVo)request.getAttribute("userInfo");%>
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
@@ -38,15 +40,15 @@
             <table>
                 <tr>
                     <td>用户名：</td>
-                    <td><input type="text" name="username" class="form-control" placeholder="username" required autofocus/></td>
+                    <td><%=userInfo.getTrueName()%></td>
                 </tr>
                 <tr>
                     <td>配送地址：</td>
-                    <td><input type="password" name="address" class="form-control" placeholder="Password" required/></td>
+                    <td><%=userInfo.getAddress()%></td>
                 </tr>
                 <tr>
                     <td>联系电话：</td>
-                    <td><input type="password" name="telphone" class="form-control" placeholder="re-Password" required/></td>
+                    <td><%=userInfo.getTelphone()%></td>
                 </tr>
                 <tr>
                     <td>支付总价：</td>
