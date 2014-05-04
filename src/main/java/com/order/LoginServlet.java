@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet
             if(isLogin)
             {
                 HttpSession session = req.getSession();
-                session.setAttribute("memberId",0L);
+                session.setAttribute("user",user);
                 forward("loginSuccess",req,resp); 
             }
             else 
