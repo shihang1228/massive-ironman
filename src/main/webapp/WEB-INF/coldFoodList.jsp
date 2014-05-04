@@ -41,6 +41,9 @@
                 <td><h3 align="center"><b>网上订餐管理系统</b></h3></td>
                 <td align="right"><img src="images/member.png"/></td>
             </tr>
+            <tr>
+                <td colspan="3" align="right"> <%@ include file="showLogInfo.jsp"%></td>
+            </tr>
         </table>
         <table class="table" contenteditable="false">
         
