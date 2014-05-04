@@ -20,6 +20,8 @@ public class PaymentServlet extends HttpServlet
         String action = req.getParameter("action");
         if("支付订单".equals(action))
         {
+            String totalPrice = req.getParameter("totalPrice");
+            req.setAttribute("totalPrice",totalPrice);
             HttpSession session = req.getSession();
             UserDao userDao = new UserDao();
             UserVo user = (UserVo)session.getAttribute("user");
