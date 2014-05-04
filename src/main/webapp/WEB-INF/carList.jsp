@@ -57,11 +57,14 @@
             </tr>
             <tr class="success">
             <td><strong>总价：</strong></td>
-            <td><%=(carItem.getFoodPrice().intValue() * carItem.getFoodNumber().intValue())%></td>
+            <td><% int price = (carItem.getFoodPrice().intValue() * carItem.getFoodNumber().intValue());out.print(price);%></td>
             </tr>
           <%}%>
-            
+            <tr class="error">
+            <td align="right" colspan="3"><h3><strong>合计：</strong></h3></td>
+            </tr>
         </table>
+        <a href="?action=coldFoodList" name="action" class="btn btn-lg btn-primary btn-block">支付订单</a>
     </div> <!-- /container -->
 
 
