@@ -21,6 +21,15 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.order.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>food</servlet-name>
         <servlet-class>com.order.FoodServlet</servlet-class>
     </servlet>
