@@ -19,7 +19,7 @@ public class CarListServlet extends HttpServlet
         UserVo user = (UserVo)session.getAttribute("user");
         if(user == null)
         {
-            out.println("还没有登录！ <a href=\"\">请登录</a>");
+            out.println("还没有登录！ <a href=\"login\">请登录</a>");
             return;
         }
         out.println("<b>" + user.getUserName() + "</b>的购物车<br>");
