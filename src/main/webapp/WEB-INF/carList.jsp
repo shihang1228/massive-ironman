@@ -1,6 +1,8 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ page import="com.order.Cart,com.order.CarItem"%>
 <% Cart cart = (Cart)session.getAttribute("cart");%>
+<%! int totalPrice;%>
+<%! int price;%>
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
@@ -38,7 +40,9 @@
         <h2 align="center"><b>购物车</b></h2>
         <table class="table" contenteditable="false">
         
-        <%for(CarItem carItem : cart.list())
+        <%  price = 0;
+            totalPrice = 0;
+        for(CarItem carItem : cart.list())
          {%>        
             <tr class="success">
                 <td rowspan="4" align="right">
@@ -57,11 +61,13 @@
             </tr>
             <tr class="success">
             <td><strong>总价：</strong></td>
-            <td><% int price = (carItem.getFoodPrice().intValue() * carItem.getFoodNumber().intValue());out.print(price);%></td>
+            <td><% price = (carItem.getFoodPrice().intValue() * carItem.getFoodNumber().intValue());
+                   out.print(price);
+                   totalPrice+=price;%></td>
             </tr>
           <%}%>
             <tr class="error">
-            <td align="right" colspan="3"><h3><strong>合计：</strong></h3></td>
+            <td align="right" colspan="3"><h3><strong>合计：<%out.print(totalPrice);%></strong></h3></td>
             </tr>
         </table>
         <a href="?action=coldFoodList" name="action" class="btn btn-lg btn-primary btn-block">支付订单</a>
