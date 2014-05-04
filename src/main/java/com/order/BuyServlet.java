@@ -51,7 +51,7 @@ public class BuyServlet extends HttpServlet
             }
             else
             {
-                out.println("<a href=\"\">请登录</a>");
+                out.println("<a href=\"login\">请登录</a>");
             }
         }
     }
