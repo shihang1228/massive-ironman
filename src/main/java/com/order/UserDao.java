@@ -93,4 +93,43 @@ public class UserDao
         }
         
     }
+    
+    public UserVo userInfo(String userName)
+    {
+        DbManage dbManage = null;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        UserVo user = null;
+        ResultSet rs = null;
+        
+        try
+        {
+            dbManage = dbManage.newInstance();
+            String sql = "SELECT true_name,address,phone_number FROM member_info WHERE user_name=?";
+            System.out.println(sql);
+            pstmt = dbManage.conn.prepareStatement(sql);
+            pstmt.setString(1,userName);
+            System.out.println(userName);
+            rs = pstmt.executeQuery();           
+            rs.next();
+            user = new UserVo();
+            user.setTrueName(rs.getString("true_name"));
+            user.setAddress(rs.getString("address"));
+            user.setTelphone(rs.getString("phone_number"));
+            
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            System.out.println("error");
+        }
+        finally
+        {
+            dbManage.close();
+        }
+        
+        return user;
+    }
 }
