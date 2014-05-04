@@ -34,8 +34,14 @@
   <body>
 
     <div class="container" width="640" height="960">
-
-        <h2 align="center"><b>网上订餐管理系统</b></h2>
+        
+        <table align="center">
+            <tr>
+                <td align="left"><a href="login?action=foodList"><img src="images/return.png"/></a></td>
+                <td><h3 align="center"><b>网上订餐管理系统</b></h3></td>
+                <td align="right"><img src="images/member.png"/></td>
+            </tr>
+        </table>
         <table class="table" contenteditable="false">
         
         <%for(int i = 0;i<foodList.size();i++)
