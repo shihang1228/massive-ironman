@@ -30,6 +30,11 @@ public class PaymentServlet extends HttpServlet
             req.setAttribute("userInfo",userInfo);            
             forward("payment",req,resp);
         }
+        else if("确认支付".equals(action))
+        {
+            forward("paySuccess",req,resp);
+        }
+        
     }
     
     public void forward(String page, HttpServletRequest req, HttpServletResponse resp) throws IOException,ServletException
