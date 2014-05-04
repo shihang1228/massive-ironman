@@ -70,7 +70,7 @@
             <td align="right" colspan="3"><h3><strong>合计：<%out.print(totalPrice);%></strong></h3></td>
             </tr>
         </table>
-        <form action="" method="POST">
+        <form action="payment" method="POST">
         <input type="hidden" name="totalPrice" value="<%out.print(totalPrice);%>"/>
         <input type="submit" name="action" value="支付订单" class="btn btn-lg btn-primary btn-block"/>
         
