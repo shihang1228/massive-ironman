@@ -1,6 +1,7 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ page import="com.order.UserVo"%>
 <% UserVo userInfo =(UserVo)request.getAttribute("userInfo");%>
+<% String totalPrice = (String)request.getAttribute("totalPrice");%>
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head>
@@ -39,27 +40,27 @@
             <h2 align="center"><b>订单详情</b></h2>
             <table>
                 <tr>
-                    <td>用户名：</td>
-                    <td><%=userInfo.getTrueName()%></td>
+                    <td><h3><strong>用户名：</strong></h3></td>
+                    <td><h3><strong><%=userInfo.getTrueName()%></strong></h3></td>
                 </tr>
                 <tr>
-                    <td>配送地址：</td>
-                    <td><%=userInfo.getAddress()%></td>
+                    <td><h3><strong>配送地址：</strong></h3></td>
+                    <td><h3><strong><%=userInfo.getAddress()%></strong></h3></td>
                 </tr>
                 <tr>
-                    <td>联系电话：</td>
-                    <td><%=userInfo.getTelphone()%></td>
+                    <td><h3><strong>联系电话：</strong></h3></td>
+                    <td><h3><strong><%=userInfo.getTelphone()%></strong></h3></td>
                 </tr>
                 <tr>
-                    <td>支付总价：</td>
-                    <td><input type="text" name="totalPrice" class="form-control" placeholder="truename" required autofocus/></td>
+                    <td><h3><strong>支付总价：</strong></h3></td>
+                    <td><h3><strong><% out.println(totalPrice);%>元</strong></h3></td>
                 </tr>
                 <tr>
-                    <td>付款方式：</td>
-                    <td>
+                    <td><h3><strong>付款方式：</strong></h3></td>
+                    <td><h3><strong>
                         <select name="payment">
                             <option value="payDelivery">货到付款</option>
-                            <option value="payOnLine">在线支付</option>
+                            <option value="payOnLine">在线支付</option></strong></h3>
                         </select>
                     </td>
                 </tr>
