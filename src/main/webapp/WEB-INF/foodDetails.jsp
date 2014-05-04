@@ -12,7 +12,13 @@
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
 
-    <title>网上订餐管理系统</title>
+    <table align="center">
+            <tr>
+                <td align="left"><img src="images/return.png"/></td>
+                <td><h3 align="center"><b>网上订餐管理系统</b></h3></td>
+                <td align="right"><img src="images/member.png"/></td>
+            </tr>           
+        </table>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.0.3/dist/css/bootstrap.css" rel="stylesheet">
