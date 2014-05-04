@@ -3,6 +3,7 @@ package com.order;
 import javax.servlet.ServletException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -19,6 +20,12 @@ public class PaymentServlet extends HttpServlet
         String action = req.getParameter("action");
         if("支付订单".equals(action))
         {
+            HttpSession session = req.getSession();
+            UserDao userDao = new UserDao();
+            UserVo user = (UserVo)session.getAttribute("user");
+            String userName = user.getUserName();
+            UserVo userInfo = userDao.userInfo(userName);
+            req.setAttribute("userInfo",userInfo);            
             forward("payment",req,resp);
         }
     }
