@@ -38,15 +38,15 @@
         <table align="center">
             <tr>
                 <td align="left"><a href="login?action=foodList"><img src="images/return.png"/></a></td>
-                <td><h3 align="center"><b>网上订餐管理系统</b></h3></td>
+                <td><h3 align="center"><b>凉菜列表</b></h3></td>
                 <td align="right"><img src="images/member.png"/></td>
-            </tr>
-            <tr>
-                <td colspan="3" align="right"> <%@ include file="showLogInfo.jsp"%></td>
             </tr>
         </table>
         <table class="table" contenteditable="false">
         
+        <tr>
+        <td colspan="3" align="right"><%@ include file="showLogInfo.jsp"%></td>
+        </tr>
         <%for(int i = 0;i<foodList.size();i++)
         {
             FoodVo food = foodList.get(i);%>        
