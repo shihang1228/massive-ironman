@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-
+    <p align="right"><%@ include file="showLogInfo.jsp"%></p>
     <table align="center">
             <tr>
                 <td align="left"><a href="login?action=coldFoodList"><img src="images/return.png"/></a></td>
@@ -42,7 +42,7 @@
     <div class="container" width="640" height="960">
 
         <form action="<%=request.getContextPath()%>/addCart" method="POST">
-            <table class="table" contenteditable="false">     
+            <table class="table" contenteditable="false">  
                 <tr class="success" align="center">
                     <td><%=food.getFoodName()%></td>
                 </tr>
