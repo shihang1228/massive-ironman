@@ -37,7 +37,14 @@
     <div class="container">
 
         <form action="" method="POST" class="form-signin" role="form">
-            <h2 align="center"><b>订单详情</b></h2>
+        <p align="right"><%@ include file="showLogInfo.jsp"%></p>
+            <table align="center">
+            <tr>
+                <td align="left"><a href="<%=request.getContextPath()%>/carList"><img src="images/return.png"/></a></td>
+                <td><h3 align="center"><b>订单详情</b></h3></td>
+                <td align="right"><img src="images/member.png"/></td>
+            </tr>
+        </table>
             <table>
                 <tr>
                     <td><h3><strong>用户名：</strong></h3></td>
