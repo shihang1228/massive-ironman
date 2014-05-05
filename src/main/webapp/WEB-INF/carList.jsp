@@ -39,7 +39,7 @@
         <p align="right"><%@ include file="showLogInfo.jsp"%></p>
         <table align="center">
             <tr>
-                <td align="left"><a href="login?action=coldFoodList"><img src="images/return.png"/></a></td>
+                <td align="left"><a href="login?action=foodList"><img src="images/return.png"/></a></td>
                 <td><h3 align="center"><b>购物车</b></h3></td>
                 <td align="right"><img src="images/member.png"/></td>
             </tr>
