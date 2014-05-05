@@ -42,8 +42,8 @@
             </tr>
         </table>
         <a href="?action=coldFoodList" name="action" class="btn btn-lg btn-primary btn-block">凉菜</a>
-        <a href="" name="action" class="btn btn-lg btn-primary btn-block">热菜</a>
-        <a href="" name="action" class="btn btn-lg btn-primary btn-block">主食</a>
+        <a href="?action=hotFoodList" name="action" class="btn btn-lg btn-primary btn-block">热菜</a>
+        <a href="?action=stapleFoodList" name="action" class="btn btn-lg btn-primary btn-block">主食</a>
         
         
       </form>
