@@ -36,10 +36,16 @@
   <body>
 
     <div class="container" width="640" height="960">
-
-        <h2 align="center"><b>购物车</b></h2>
-        <table class="table" contenteditable="false">
+        <p align="right"><%@ include file="showLogInfo.jsp"%></p>
+        <table align="center">
+            <tr>
+                <td align="left"><a href="login?action=coldFoodList"><img src="images/return.png"/></a></td>
+                <td><h3 align="center"><b>购物车</b></h3></td>
+                <td align="right"><img src="images/member.png"/></td>
+            </tr>
+        </table>
         
+        <table class="table" contenteditable="false">
         <%  price = 0;
             totalPrice = 0;
         for(CarItem carItem : cart.list())
