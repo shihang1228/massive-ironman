@@ -45,7 +45,7 @@
         <table class="table" contenteditable="false">
         
         <tr>
-        <td colspan="3" align="right"><%@ include file="showLogInfo.jsp"%></td>
+            <td colspan="3" align="right"><%@ include file="showLogInfo.jsp"%></td>
         </tr>
         <%for(int i = 0;i<foodList.size();i++)
         {
