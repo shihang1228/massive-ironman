@@ -14,7 +14,7 @@
 
     <table align="center">
             <tr>
-                <td align="left"><img src="images/return.png"/></td>
+                <td align="left"><a href="login?action=coldFoodList"><img src="images/return.png"/></a></td>
                 <td><h3 align="center"><b>网上订餐管理系统</b></h3></td>
                 <td align="right"><img src="images/member.png"/></td>
             </tr>           
@@ -41,7 +41,6 @@
 
     <div class="container" width="640" height="960">
 
-        <h2 align="center"><b>网上订餐管理系统</b></h2>
         <form action="<%=request.getContextPath()%>/addCart" method="POST">
             <table class="table" contenteditable="false">     
                 <tr class="success" align="center">
